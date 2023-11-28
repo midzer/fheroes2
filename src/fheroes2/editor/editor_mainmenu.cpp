@@ -168,7 +168,7 @@ namespace Editor
         // Stop all sounds, but not the music
         AudioManager::stopSounds();
 
-        AudioManager::PlayMusicAsync( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
+        AudioManager::PlayMusic( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
 
         // setup cursor
         const CursorRestorer cursorRestorer( true, Cursor::POINTER );

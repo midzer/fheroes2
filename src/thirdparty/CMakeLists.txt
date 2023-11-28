@@ -28,5 +28,5 @@ target_include_directories(
 
 target_link_libraries(
 	smacker
-	Threads::Threads # To match the build settings of the main app
+	#Threads::Threads # To match the build settings of the main app
 	)

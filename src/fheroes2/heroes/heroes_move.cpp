@@ -155,7 +155,7 @@ namespace
         }
 
         assert( soundId != M82::UNKNOWN );
-        AudioManager::PlaySoundAsync( soundId );
+        AudioManager::PlaySound( soundId );
     }
 
     bool isNeedStayFrontObject( const Heroes & hero, const Maps::Tiles & next )

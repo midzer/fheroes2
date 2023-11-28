@@ -87,6 +87,7 @@ namespace AudioManager
         uint8_t volumePercentage{ 0 };
     };
 
+    void playLoopSounds( std::map<M82::SoundType, std::vector<AudioLoopEffectInfo>> soundEffects );
     void playLoopSoundsAsync( std::map<M82::SoundType, std::vector<AudioLoopEffectInfo>> soundEffects );
 
     // Returns the ID of the channel occupied by the sound being played, or a negative value (-1) in case of failure.

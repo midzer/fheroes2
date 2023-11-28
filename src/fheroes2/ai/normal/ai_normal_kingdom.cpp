@@ -713,7 +713,7 @@ namespace AI
         Interface::StatusWindow & status = Interface::AdventureMap::Get().getStatusWindow();
         status.DrawAITurnProgress( 0 );
 
-        AudioManager::PlayMusicAsync( MUS::COMPUTER_TURN, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
+        AudioManager::PlayMusic( MUS::COMPUTER_TURN, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
 
         VecHeroes & heroes = kingdom.GetHeroes();
         const VecCastles & castles = kingdom.GetCastles();

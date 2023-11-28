@@ -21,7 +21,7 @@
 #ifndef ENDIAN_H2_H
 #define ENDIAN_H2_H
 
-#if defined( __linux__ )
+#if defined( __linux__ ) || defined ( __EMSCRIPTEN__ )
 #include <endian.h> // IWYU pragma: export
 
 #elif defined( __FreeBSD__ ) || defined( __OpenBSD__ )

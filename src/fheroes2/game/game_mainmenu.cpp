@@ -96,8 +96,9 @@ namespace
     }
 }
 
-void Game::mainGameLoop( bool isFirstGameRun )
+void Game::mainGameLoop( /*bool isFirstGameRun=true*/ )
 {
+    bool isFirstGameRun = true;
     fheroes2::GameMode result = fheroes2::GameMode::MAIN_MENU;
 
     bool exit = false;
@@ -208,7 +209,7 @@ fheroes2::GameMode Game::MainMenu( bool isFirstGameRun )
     // Stop all sounds, but not the music
     AudioManager::stopSounds();
 
-    AudioManager::PlayMusicAsync( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
+    AudioManager::PlayMusic( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
 
     Settings & conf = Settings::Get();
 
@@ -254,8 +255,8 @@ fheroes2::GameMode Game::MainMenu( bool isFirstGameRun )
 
         fheroes2::showMessage( header, body, Dialog::OK );
 
-        conf.resetFirstGameRun();
-        conf.Save( Settings::configFileName );
+        //conf.resetFirstGameRun();
+        //conf.Save( Settings::configFileName );
     }
 
     outputMainMenuInTextSupportMode();

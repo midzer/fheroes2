@@ -32,9 +32,9 @@ namespace MultiThreading
             _worker = std::make_unique<std::thread>( AsyncManager::_workerThread, this );
 
             {
-                std::unique_lock<std::mutex> lock( _mutex );
+                //std::unique_lock<std::mutex> lock( _mutex );
 
-                _masterNotification.wait( lock, [this] { return !_runFlag; } );
+                //_masterNotification.wait( lock, [this] { return !_runFlag; } );
             }
         }
     }
@@ -43,7 +43,7 @@ namespace MultiThreading
     {
         if ( _worker ) {
             {
-                const std::scoped_lock<std::mutex> lock( _mutex );
+                //const std::scoped_lock<std::mutex> lock( _mutex );
 
                 _exitFlag = true;
                 _runFlag = true;
@@ -68,7 +68,7 @@ namespace MultiThreading
         assert( manager != nullptr );
 
         {
-            const std::scoped_lock<std::mutex> lock( manager->_mutex );
+            //const std::scoped_lock<std::mutex> lock( manager->_mutex );
 
             manager->_runFlag = false;
         }
@@ -77,9 +77,9 @@ namespace MultiThreading
 
         while ( !manager->_exitFlag ) {
             {
-                std::unique_lock<std::mutex> lock( manager->_mutex );
+                //std::unique_lock<std::mutex> lock( manager->_mutex );
 
-                manager->_workerNotification.wait( lock, [manager] { return manager->_runFlag; } );
+                //manager->_workerNotification.wait( lock, [manager] { return manager->_runFlag; } );
             }
 
             if ( manager->_exitFlag ) {
@@ -87,7 +87,7 @@ namespace MultiThreading
             }
 
             {
-                const std::scoped_lock<std::mutex> lock( manager->_mutex );
+                //const std::scoped_lock<std::mutex> lock( manager->_mutex );
 
                 const bool moreTasks = manager->prepareTask();
                 if ( !moreTasks ) {

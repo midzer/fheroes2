@@ -1392,7 +1392,7 @@ void Battle::Interface::Redraw()
         // the game for some time in certain cases (e.g. slow MIDI backend).
         _preBattleSoundChannelId.reset();
 
-        AudioManager::PlayMusicAsync( MUS::GetBattleRandom(), Music::PlaybackMode::REWIND_AND_PLAY_INFINITE );
+        AudioManager::PlayMusic( MUS::GetBattleRandom(), Music::PlaybackMode::REWIND_AND_PLAY_INFINITE );
     }
 
     RedrawPartialStart();

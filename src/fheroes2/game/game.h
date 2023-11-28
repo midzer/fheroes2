@@ -53,7 +53,7 @@ namespace Game
         TYPE_MULTI = TYPE_HOTSEAT
     };
 
-    void mainGameLoop( bool isFirstGameRun );
+    void mainGameLoop( /*bool isFirstGameRun=true*/ );
 
     fheroes2::GameMode MainMenu( bool isFirstGameRun );
     fheroes2::GameMode NewGame();

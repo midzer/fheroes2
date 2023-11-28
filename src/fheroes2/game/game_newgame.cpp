@@ -515,7 +515,7 @@ fheroes2::GameMode Game::NewGame()
     // Stop all sounds, but not the music
     AudioManager::stopSounds();
 
-    AudioManager::PlayMusicAsync( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
+    AudioManager::PlayMusic( MUS::MAINMENU, Music::PlaybackMode::RESUME_AND_PLAY_INFINITE );
 
     // reset last save name
     Game::SetLastSaveName( "" );

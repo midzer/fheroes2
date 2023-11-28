@@ -707,7 +707,7 @@ void Game::ShowCredits( const bool keepMainMenuBorders )
         fheroes2::fadeOutDisplay( creditsRoi, false );
     }
 
-    AudioManager::PlayMusicAsync( MUS::VICTORY, Music::PlaybackMode::REWIND_AND_PLAY_INFINITE );
+    AudioManager::PlayMusic( MUS::VICTORY, Music::PlaybackMode::REWIND_AND_PLAY_INFINITE );
 
     const uint64_t animationDelay = 50;
 

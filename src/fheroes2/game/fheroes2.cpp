@@ -66,6 +66,8 @@
 #include "ui_tool.h"
 #include "zzlib.h"
 
+#include <emscripten.h>
+
 namespace
 {
     std::string GetCaption()
@@ -270,6 +272,8 @@ int main( int argc, char ** argv )
     (void)argc;
 #endif
 
+   emscripten_set_main_loop(&Game::mainGameLoop, 0, 0);
+
     try {
         const fheroes2::HardwareInitializer hardwareInitializer;
         Logging::InitLog();
@@ -333,7 +337,7 @@ int main( int argc, char ** argv )
         try {
             const CursorRestorer cursorRestorer( true, Cursor::POINTER );
 
-            Game::mainGameLoop( conf.isFirstGameRun() );
+            Game::mainGameLoop( /*conf.isFirstGameRun()*/ );
         }
         catch ( const fheroes2::InvalidDataResources & ex ) {
             ERROR_LOG( ex.what() )
